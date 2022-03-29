@@ -1,0 +1,47 @@
+%Capítulo 1
+
+\section{Descripción del problema} \label{descripcionproblema}
+
+    Actualmente existe un sistema viejo donde los alumnos y profesores pueden registrar proyectos y tesis, sin embargo, este sistema al haber sido creado hace tiempo, y no seguir los estándares de calidad que hay en la actualidad ocasiona que su mantenimiento o modificación para agregar nuevas funcionalidades requiera una mayor cantidad de trabajo de codificación y pruebas, aunado a esto, la interfaz de usuario no es intuitiva ni amigable.
+
+\section{Definición del problema} \label{definicionproblema}
+    
+    Dentro del proceso definido para registrar la tesis; por parte de los estudiantes, o proyectos; por parte de los profesores, existe un sistema creado hace tiempo el cual es difícil de mantener y de agregar nuevas funcionalidades ya que no sigue estándares de calidad actuales, además de tener una interfaz que no es amigable para el usuario, por esta razón se tomó la iniciativa para volver a hacer el sistema con estándares, y prácticas actuales para su codificación lo cual permitirá que se agreguen funcionalidades con mayor sencillez.
+
+\section{Objetivo(s) de la investigación} \label{objetivoinvestigacion}
+    
+    \subsection{\textbf{\textit{Objetivo general}}} %Cómo hacer sub-secciones
+    Elaborar el sistema de investigadores que permita a los estudiantes crear tesis, y a los profesores proyectos usando microservicios para que sea más sencillo el acoplar nuevas funcionalidades a este sistema.
+    
+    \subsection{\textbf{\textit{Objetivos específicos}}} %Cómo hacer sub-secciones
+    \begin{enumerate}
+        \item Elaborar microservicios para el crear, actualizar, eliminar y obtener información de una base de datos.
+        \item Separar la funcionalidad del sistema en backend y frontend.
+        \item Elaborar la base de datos relacional normalizada.
+        \item Modernizar la interfaz gráfica con la cual interactúan los usuarios.
+        \item Conectar los microservicios(backend) con la interfaz gráfica(frontend).
+    \end{enumerate}
+
+\section{Delimitación de la investigación} \label{delimitacioninvestigacion}
+
+    El estudiante participará en la parte del backend para crear microservicios faltantes identificados como:
+    
+    \begin{enumerate}
+        \item Servicio para obtener todas las tesis relacionadas a un alumno en específico.
+        \item Servicio para obtener las tesis de los alumnos relacionadas a un investigador.
+        \item Implementar un trabajo secundario en la base de datos que cierre las tesis al llegar a su fecha de fin para que no queden abiertas en el sistema.
+        \item Servicios para manejo de perfil de usuario.
+        \item Crear tablas en la base de datos para almacenar categoría de investigación, tipo de investigación, y grado.
+        \item Endpoints para obtener las listas de las categorías de investigación, tipo de investigación, y grado.
+        \item Elaboración de scripts para insertar datos en las tablas creadas por parte del estudiante.
+    \end{enumerate}
+
+\section{Justificación} \label{justificacion}
+
+    La necesidad de la renovación de este sistema radica en que se agregan nuevas funcionalidades, sin embargo, después de indagar en cómo agregar dichas funcionalidades se obtuvo como respuesta que cada vez que quisieran hacer cambios, se tendría que modificar varias partes del sistema; ya que la mayoría de este es estático, por lo tanto, con la renovación se cambiará la arquitectura a una de microservicios, los cuales permiten hacer un sistema más flexible y dinámico a cambios.
+    
+    El trabajar con microservicios permite que se hagan módulos independientes los cuales realizan una tarea en específico, y esto da pie a integrar los módulos de manera que incluso si los requisitos van cambiando, estos no se vean afectados por los cambios requeridos.
+
+\section{Hipótesis} \label{hipotesis}
+
+    El nuevo sistema permite tener una flexibilidad mayor al agregar funcionalidades, o incluso modificarlas, además de que se tiene una interfaz gráfica de usuario más moderna y amigable.
