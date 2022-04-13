@@ -2,7 +2,13 @@
 
 \section{Marco histórico y contextual}
 
-    \textbf{\textit{Descripción}}
+    Existe un sistema en la actualidad para registrar los trabajos de tesis de los alumnos, sin embargo, este sistema fue desarrollado 
+    
+    "La investigación en la UAG es una actividad que contribuye a dar coherencia a sus otras funciones sustantivas y tiene por objeto promover, alentar y apoyar a los esfuerzos que lleven a generar nuevo conocimiento en las áreas académicas que integran a la institución, contribuir a la solución de los problemas de la sociedad a nivel regional y nacional, mejorar la calidad del proceso enseñanza-aprendizaje para nuestros estudiantes, vinculando pertinentemente las actividades de investigación de los profesores en conformidad con la Misión, Valores y Fines de la Universidad Autónoma de Guadalajara.
+    La investigación deberá ser realizada en todos los niveles educativos que ofrece la Institución y estará focalizada en proponer soluciones a los problemas planteados por los sectores productivos, social y de servicios tanto del sector público como del privado. Es por ello y siguiendo este propósito se pretende que con el Sistema de información de la Coordinación de Investigación y Desarrollo Tecnológico se tenga un registro de toda la investigación que se crean en nuestra Universidad, desde Tesis de cualquier Licenciatura o grado académico, hasta artículos, proyectos de intervención o bien cualquier tipo de investigación que sea relevante sin importar la etapa escolar en la que se esté."\cite{UAG}
+    
+    
+    
     
     Reseña histórica que permita identificar o describir el contexto donde se desarrollará o se desarrolló el estudio.
     Caracteriza el contexto institucional donde se realizará la investigación. No se limita únicamente a un lugar geográfico, sino que hace una ampliación descriptiva del mismo.
@@ -10,6 +16,18 @@
     Debe presentar una síntesis de lo que ya se encontró sobre el tema que se desea investigar (fuentes, referentes, teorías, investigaciones).
     
     \textbf{\textit{Criterios de calidad}}
+    
+    La página actual del sistema de investigadores de la Universidad Autónoma de Guadalajara, utiliza un diseño anticuado; antes del 2018, en el cual la mayoría de los elementos web son estáticos y, no se adaptan con fluidez a las resoluciones actuales en el año 2022, además, para incluir nuevas funcionalidades al sistema de investigadores se necesita modificar una gran cantidad de elementos web o, casi rediseñarlos, ya que la arquitectura utilizada de Modelo Vista Controlador(MVC) simple no permite su modificación de manera sencilla.
+    
+    La propuesta del equipo de trabajo liderado por la Doctora Lina Maria Aguilar Lobo consiste en volver a desarrollar el sistema de investigadores, pero con una nueva arquitectura y elementos que faciliten la implementación de nuevas funcionalidades. La arquitectura propuesta se compondrá de los siguientes elementos:
+    
+    \begin{itemize}
+        \item Utilizar el diseño de Modelo Vista Controlador como base.
+        \item Separar el desarrollo en dos partes: frontend y backend.
+        \item Crear una base de datos relacional normalizada.
+        \item Apoyarse de una arquitectura de micro servicios para proveer de información al frontend.
+        \item Interfaz gráfica de usuario responsiva.
+    \end{itemize}
     
     El marco teórico debe responder a la pregunta: \textbf{¿En qué está sustentada la investigación?}
     Debe presentar el sustento teórico (teorías), filosófico, pedagógico, psicológico, ético, etc. que respalda científicamente la investigación.
