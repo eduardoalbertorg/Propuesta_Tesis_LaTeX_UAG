@@ -1,128 +1,99 @@
 %Capítulo 2
 
 \section{Marco histórico y contextual}
-
-    Existe un sistema en la actualidad para registrar los trabajos de tesis de los alumnos, sin embargo, este sistema fue desarrollado 
     
     "La investigación en la UAG es una actividad que contribuye a dar coherencia a sus otras funciones sustantivas y tiene por objeto promover, alentar y apoyar a los esfuerzos que lleven a generar nuevo conocimiento en las áreas académicas que integran a la institución, contribuir a la solución de los problemas de la sociedad a nivel regional y nacional, mejorar la calidad del proceso enseñanza-aprendizaje para nuestros estudiantes, vinculando pertinentemente las actividades de investigación de los profesores en conformidad con la Misión, Valores y Fines de la Universidad Autónoma de Guadalajara.
     La investigación deberá ser realizada en todos los niveles educativos que ofrece la Institución y estará focalizada en proponer soluciones a los problemas planteados por los sectores productivos, social y de servicios tanto del sector público como del privado. Es por ello y siguiendo este propósito se pretende que con el Sistema de información de la Coordinación de Investigación y Desarrollo Tecnológico se tenga un registro de toda la investigación que se crean en nuestra Universidad, desde Tesis de cualquier Licenciatura o grado académico, hasta artículos, proyectos de intervención o bien cualquier tipo de investigación que sea relevante sin importar la etapa escolar en la que se esté."\cite{UAG}
     
+    La página actual del sistema de investigadores de la Universidad Autónoma de Guadalajara, utiliza un diseño anticuado; antes del 2018, en el cual la mayoría de los elementos web son estáticos y, no se adaptan con fluidez a las resoluciones actuales en el año 2022, además, para incluir nuevas funcionalidades al sistema de investigadores se necesita modificar una gran cantidad de elementos web o, casi rediseñarlos, ya que la arquitectura monolítica utilizada en conjunto del patrón de diseño de Modelo-Vista-Controlador(MVC) no permite que se le agreguen nuevas funcionalidades de una manera sencilla.
     
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/sistema_investigadores_actual.png}
+        \caption{Actual sistema de investigadores.}
+        \label{fig:galaxy}
+    \end{figure}
     
-    
-    Reseña histórica que permita identificar o describir el contexto donde se desarrollará o se desarrolló el estudio.
-    Caracteriza el contexto institucional donde se realizará la investigación. No se limita únicamente a un lugar geográfico, sino que hace una ampliación descriptiva del mismo.
-    Ubica la investigación en una época y tiempo determinados, y sus circunstancias particulares.
-    Debe presentar una síntesis de lo que ya se encontró sobre el tema que se desea investigar (fuentes, referentes, teorías, investigaciones).
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    La página actual del sistema de investigadores de la Universidad Autónoma de Guadalajara, utiliza un diseño anticuado; antes del 2018, en el cual la mayoría de los elementos web son estáticos y, no se adaptan con fluidez a las resoluciones actuales en el año 2022, además, para incluir nuevas funcionalidades al sistema de investigadores se necesita modificar una gran cantidad de elementos web o, casi rediseñarlos, ya que la arquitectura utilizada de Modelo Vista Controlador(MVC) simple no permite su modificación de manera sencilla.
-    
-    La propuesta del equipo de trabajo liderado por la Doctora Lina Maria Aguilar Lobo consiste en volver a desarrollar el sistema de investigadores, pero con una nueva arquitectura y elementos que faciliten la implementación de nuevas funcionalidades. La arquitectura propuesta se compondrá de los siguientes elementos:
+    La propuesta del equipo de trabajo liderado por la Doctora Lina María Aguilar Lobo consiste en volver a desarrollar el sistema de investigadores, pero con una nueva arquitectura y elementos que faciliten la implementación de nuevas funcionalidades. La arquitectura propuesta se compondrá de los siguientes elementos:
     
     \begin{itemize}
-        \item Utilizar el diseño de Modelo Vista Controlador como base.
+        \item Utilizar el patrón de diseño de Modelo-Vista-Controlador como base.
         \item Separar el desarrollo en dos partes: frontend y backend.
         \item Crear una base de datos relacional normalizada.
         \item Apoyarse de una arquitectura de micro servicios para proveer de información al frontend.
         \item Interfaz gráfica de usuario responsiva.
     \end{itemize}
-    
-    El marco teórico debe responder a la pregunta: \textbf{¿En qué está sustentada la investigación?}
-    Debe presentar el sustento teórico (teorías), filosófico, pedagógico, psicológico, ético, etc. que respalda científicamente la investigación.
-    Debe presentarse el escenario de argumentaciones en el cual se sitúan los investigadores, de donde se debe justificar, manifestando la opinión y punto de vista de la base de donde se va a partir, según sus fundamentos teóricos y concepción filosófica.
-    
-    Es siguiente es un ejemplo de un lista de elementos.
-    
-    \begin{itemize}
-        \item La geometría del sistema,
-        \item Los materiales involucrados,
-        \item Las partículas fundamentales de interés,
-        \item La generación de eventos primarios,
-        \item El seguimiento de partículas a través de materiales y campos electromagnéticos,
-        \item Los procesos físicos que rigen las interacciones de las partículas,
-    \end{itemize}
 
 \section{Marco referencial}
-
-    \textbf{\textit{Descripción}}
     
-    Reseña de las investigaciones anteriores o actuales que apoyan nuestro estudio
+    La arquitectura actual usada en el sistema de investigadores es de tipo monolítico, la cual se centra en un solo proveedor o servidor para interactuar con el sistema de investigadores. Esto conlleva algunas desventajas:
     
-    \textbf{\textit{Criterios de calidad}}
+    \begin{itemize}
+        \item Si alguno de los módulos del sistema de investigadores falla, esto causará que todo el sistema falle.
+        \item Acoplamiento estrecho.
+        \item No es sencillo escalar el sistema de investigadores; dicho en otras palabras: agregar nuevas funcionalidades.
+        \item Las tecnologías usadas en el sistema de investigadores se debe de usar en todo momento. Los cambios de tecnologías son costosos en términos de tiempo y de recursos.
+    \end{itemize}
     
-    El marco teórico debe responder a la pregunta: \textbf{¿En qué está sustentada la investigación?}
-    Debe presentar el sustento teórico (teorías), filosófico, pedagógico, psicológico, ético, etc. que respalda científicamente la investigación.
-    Debe presentarse el escenario de argumentaciones en el cual se sitúan los investigadores, de donde se debe justificar, manifestando la opinión y punto de vista de la base de donde se va a partir, según sus fundamentos teóricos y concepción filosófica.
-
-\section{Marco legal}
-
-    \textbf{\textit{Descripción}}
+    La mayor diferencia entre una arquitectura monolítica y una de micro servicios se puede apreciar en los diagramas siguientes.
     
-    Fundamentos legales del tema de estudio. (Opcional, si se considera necesarios para el estudio)
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/monolitico.png}
+        \caption{Arquitectura monolítica.\cite{KryptonSolid}}
+        \label{fig:galaxy}
+    \end{figure}
     
-    \textbf{\textit{Criterios de calidad}}
-    
-    El marco teórico debe responder a la pregunta: \textbf{¿En qué está sustentada la investigación?}
-    Debe presentar el sustento teórico (teorías), filosófico, pedagógico, psicológico, ético, etc. que respalda científicamente la investigación.
-    Debe presentarse el escenario de argumentaciones en el cual se sitúan los investigadores, de donde se debe justificar, manifestando la opinión y punto de vista de la base de donde se va a partir, según sus fundamentos teóricos y concepción filosófica.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/microservicios.png}
+        \caption{Arquitectura basada en micro servicios.\cite{KryptonSolid}}
+        \label{fig:galaxy}
+    \end{figure}
 
 \section{Marco Teórico}
 
-    \textbf{\textit{Descripción}}
+    El nuevo sistema de investigadores que se implementa en este documento se basa en metodologías de trabajo ágiles, y así mismo de una arquitectura en el backend de micro servicios la cual traerá beneficios a la escalabilidad, acoplamiento, y gestión del sistema de investigadores.
     
-    Es el respaldo organizado en argumentos teóricos y referenciales que se le da al problema de investigación. Es la evaluación, presentación y pertinencia de enfoques y resultados de teorías e investigaciones en diversas áreas del conocimiento, los cuales han abordado directa o indirectamente, una problemática similar a la del proyecto actual.
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    El marco teórico debe responder a la pregunta: \textbf{¿En qué está sustentada la investigación?}
-    Debe presentar el sustento teórico (teorías), filosófico, pedagógico, psicológico, ético, etc. que respalda científicamente la investigación.
-    Debe presentarse el escenario de argumentaciones en el cual se sitúan los investigadores, de donde se debe justificar, manifestando la opinión y punto de vista de la base de donde se va a partir, según sus fundamentos teóricos y concepción filosófica.
+    "La arquitectura de micro servicios divide los componentes del sistema en pequeños servicios autónomos que se pueden implementar y escalar de forma independiente."\cite{KryptonSolid}
+
+    La arquitectura de micro servicios nos permite el separar cada funcionalidad en módulos específicos los cuales; al no estar estrechamente acoplados, no afectaran al sistema de investigadores si alguno presenta una falla. Además de que es más sencillo el proceso de debug y pruebas para estos módulos.
 
 \section{Hipótesis}
 
-    \textbf{\textit{Descripción}}
-    
-    La hipótesis es una proposición formulada y estructurada de tal forma que trata de responder a una inquietud o a un problema.
-    Se plantea con el fin de explicar o conocer hechos o fenómenos que caracterizan o identifican al objeto de estudio, interrelacionando una o más variables mediante una proposición lógica.
-    Es una repuesta tentativa al problema de investigación.
-    Puede ser enunciada en forma afirmativa, negativa o interrogativa.
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    Debe :
-    Siempre de estar de acuerdo con el problema y los objetivos de investigación.
-    Admitir verificación y validación estadística.
-    Ser comprobable o empíricamente demostrable.
-    Estar en armonía con el marco teórico y con otras hipótesis del campo de investigación.
-    Cumplir con el principio de ”parsimonia”, es decir, entre dos hipótesis igualmente probables, debe de elegirse la más sencilla.
-    Ser precisa, específica y expresarse con simplicidad lógica. Además de descriptiva, debe de intentar una explicación del fenómeno.
-    Expresarse en forma cuantitativa, o ser susceptible de cuantificación.
-    Ser generalizable.
-    Ser factibles de probarse.
-    No contener implicaciones morales.
+    La necesidad de rehacer el sistema de investigadores yace en la habilidad de agregar nuevas funcionalidades para mejorar los procesos de los investigadores dentro de la UAG y, dado el conocimiento y habilidades de programación para backend se implementa la arquitectura de micro servicios para proveer el 100\% de la información dinámica requerida y almacenada en la base de datos a la parte del frontend la cual se encargarán otros alumnos de realizar.
 
 \section{Definición de términos y conceptos básicos}
 
-    \textbf{\textit{Descripción}}
+    \textbf{Arquitectura}: 
     
-    Define y relaciona en orden alfabético, los términos usados en la definición del problema. Cumplen con la función de:
-    Establecer una mejor comunicación entre investigadores y usuarios de las investigaciones.
-    Unificar criterios entre investigadores.
-    Mejorar la validación de la investigación.
-    Delimitar con precisión los alcances de la investigación.
-    Ayudar a definir la postura del investigador.
+    \textbf{Arquitectura monolítica}:
+
+    \textbf{Backend}:
     
-    \textbf{\textit{Criterios de calidad}}
+    \textbf{Debug}:
     
-    La definición de términos y conceptos debe elaborarse con:\\
-    \textbf{Precisión}: Los términos y conceptos relevantes deben de estar claramente determinables sin omisión de su esencia.\\
-    \textbf{Complitud}: Debe asegurarse que cada uno de los términos o conceptos relevantes esté abarcado en la investigación.\\
-    \textbf{Consistencia}: Las definiciones y los conceptos empleados en la investigación deberán de emplearse de igual forma en tiempo, modo y forma por todos los que participan en la investigación.\\
-    \textbf{No repetición}: No pueden emplearse como parte de una definición, términos que deban ser definidos.\\
-    \textbf{Compatibilidad}: Los términos y conceptos deben ser compatibles con los términos y conceptos usados normalmente por la ciencia en la cual se realiza la investigación y deben de ser, en lo posible, los utilizados por los usuarios de la investigación.\\
-    \textbf{Extensión}: Los términos y conceptos no deberán ser tan extensos que lo abarque todo, pero deberán ser comprobables.\\
-    \textbf{Sencillez de redacción}.\\
-    \textbf{Claridad} de conceptos sin rebuscamientos lingüísticos.\\
-    \textbf{Congruencia}: La definición de términos y conceptos debe ser congruente con la filosofía del investigador y el marco teórico.
+    \textbf{Desplegar}: 
+    
+    \textbf{Diseño web responsivo}: El diseño web responsivo es una configuración en la que el servidor siempre envía el mismo código HTML a todos los dispositivos y se usa CSS para modificar el procesamiento de la página en el dispositivo. Los algoritmos de Google deberían detectar automáticamente esta configuración si se permite que todos los usuarios-agentes del robot de Google rastreen la página y sus elementos (imágenes, CSS y JavaScript). \cite{GoogleResponsivo}
+    
+    \textbf{Frontend}:
+    
+    \textbf{Micro servicios}: La arquitectura de micro servicios es un estilo que da estructura a una aplicación como una colección de servicios con las siguientes características:
+    
+    \begin{itemize}
+        \item Altamente mantenibles.
+        \item Se encuentran débilmente acoplados.
+        \item Desplegables independientemente; no dependen de otros servicios.
+        \item Organizados por capacidades del sistema
+        \item Fáciles de probar.
+        \item Pueden trabajar con diferentes tecnologías y lenguajes.
+    \end{itemize}
+    
+    \textbf{MVC}: Modelo-Vista-Controlador
+    
+    \textbf{Módulo}:
+    
+    \textbf{Servidor}: 
+    
+    \textbf{UAG}: Universidad Autónoma de Guadalajara
