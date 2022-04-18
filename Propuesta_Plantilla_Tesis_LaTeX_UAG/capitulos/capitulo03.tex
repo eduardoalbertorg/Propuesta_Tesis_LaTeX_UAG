@@ -1,109 +1,117 @@
 %Capítulo 3
 
-\section{Diseño del Estudio}
+\section{Diseño de la propuesta}
+
+    La parte del backend del sistema de investigadores se compondrá de la siguiente figura \ref{fig:architecture}:
     
-    \textbf{\textit{Descripción}}
-    
-    Describe con claridad el método que se va a aplicar al tipo de investigación y las razones de su elección.
-    \begin{itemize}
-        \item Acción del investigador sobre las variables.
-        \item Cinética del estudio.
-    \end{itemize}
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    La metodología responde a la pregunta: \textbf{¿Cómo se elaborará la investigación?}
-    El diseño se debe de realizar en función del grado de validez y generalización que se pretende dar al proyecto de investigación, tomando en cuenta:
-    
-    \begin{itemize}
-        \item Grado de confiabilidad
-        \item Control de sesgo
-        \item Tamaño de la muestra
-        \item Control o eliminación de variables extrañas
-        \item Grado o nivel de confiabilidad de los instrumentos
-    \end{itemize}
-    
-    Es siguiente es un ejemplo usando Tikz. Llama Figura \ref{fig:ArregloFuentes}
-    
-    \begin{figure}
-        \begin{tikzpicture}
-            \draw[step=1cm,gray,very thin] (-2.9,-2.9) grid (2.9,2.9);
-            % Draw X axis
-            \draw (-3,0) -- (3,0) node[anchor=north west] {X};
-            % Draw Y axis
-            \draw (0,-3) -- (0,3) node[anchor=south east] {Y};
-            %+X +Y
-            \draw (0,0) circle (0.2);
-            \draw (1,0) circle (0.2);
-            \draw (2,0) circle (0.2);
-            \draw (3,0) circle (0.2);
-            \draw (1,1) circle (0.2);
-            \draw (0,1) circle (0.2);
-            \draw (0,2) circle (0.2);
-            \draw (0,3) circle (0.2);
-            \draw (1,1) circle (0.2);
-            \draw (1,2) circle (0.2);
-            \draw (1,3) circle (0.2);
-            \draw (2,1) circle (0.2);
-            \draw (2,2) circle (0.2);
-            \draw (2,3) circle (0.2);
-            \draw (3,1) circle (0.2);
-            \draw (3,2) circle (0.2);
-            \draw (3,3) circle (0.2);  
-        \end{tikzpicture}
+    \begin{figure}[H]
         \centering
-        \caption{La figura es un ejemplo.}
-        \label{fig:ArregloFuentes}
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/ARCHITECTURE.png}
+        \caption{Arquitectura basada en micro servicios.}
+        \label{fig:architecture}
     \end{figure}
-
-
-\section{Universo de trabajo y muestra}
-
-    \textbf{\textit{Descripción}}
     
-    Describe la población con la que se trabajará en la investigación, y el procedimiento para la selección de la muestra.
+    Con base en la figura \ref{fig:architecture} podemos apreciar que el backend va a responder a una petición hecha a través del usuario usando una interfaz gráfica, acto seguido el servidor identificará la petición para direccionarla al micro servicio correspondiente y esta hará una consulta a la base de datos para poder satisfacer la petición.
     
-    \textbf{\textit{Criterios de calidad}}
-    
-    El tamaño de la muestra deberá corresponder al nivel de confiabilidad deseado y pertinente al estudio.
-
-\section{Operacionalización de variables}
-
-    \textbf{\textit{Descripción}}
-    
-    Es llevar una variable de un nivel abstracto a un nivel concreto; es decir, que permita medirla o calificarla. En esta sección, por cada variable incluida en el estudio, se deberá indicar:
+    Hay distintos tipos de petición que un usuario puede realizar al backend, dentro de estos se encuentran los siguientes verbos o métodos HTTP:
     
     \begin{itemize}
-        \item Definición teórica.
-        \item Definición operacional y, en su caso, criterios diagnósticos.
-        \item Nivel de medición.
-        \item Indicadores.
-        \item Ítems de los instrumentos de investigación respectivos.
+        \item GET: Se utiliza como lectura de datos.
+        \item POST: Para poder crear nuevas entradas en la base de datos.
+        \item PUT: Para la modificación de datos.
+        \item DELETE: Para el borrar datos.
     \end{itemize}
     
-    \textbf{\textit{Criterios de calidad}}
+    Los distintos tipos de usuarios que existirán son dos: Alumno e Investigador, los cuales tendrán diferentes tipos de participaciones dependiendo del trabajo al que se asignen; mostrados en la figura \ref{fig:users_table}.
     
-    Debe de contener una definición conceptual previa por cada variable del estudio y su desarrollo descriptivo de cómo se operativizó.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/tabla_usuarios.png}
+        \caption{Tabla de usuarios ordenada por trabajo y tipo de participación.}
+        \label{fig:users_table}
+    \end{figure}
+    
+    Dentro de los posibles flujos para un usuario que quiere consultar todas las tesis registradas para un alumno se puede apreciar en la figura \ref{fig:getAllTesisFromStudents} y sus pasos son los siguientes:
+    
+    \begin{enumerate}
+        \item Realizar la petición al servidor.
+        \item El servidor direccionará la petición al micro servicio o API correspondiente por medio de la URI.
+        \item El micro servicio resolverá la petición del usuario y dará una respuesta con base en los datos proporcionados en la petición.
+        \item El servidor obtendrá la respuesta y la regresará al usuario a través del frontend.
+    \end{enumerate}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/getAllTesisFromStudents_sequence_diagram.png}
+        \caption{Diagrama UML para la secuencia de obtener las tesis de un alumno.}
+        \label{fig:getAllTesisFromStudents}
+    \end{figure}
+    
+    Se debe plantear un diagrama general de la propuesta del
+    proyecto a realizar.
+    • El objetivo es explicar en uno o varios diagramas la
+    propuesta del proyecto a desarrollar, indicando el flujo de
+    información, los módulos principales, la teoría relacionada,
+    y los resultados esperados.
+    • Debe incluir una relación lógica de los elementos que se
+    consideran necesarios para dar una visión completa de la
+    propuesta.
+    • Debe estar orientado a los objetivos propuestos y debe
+    responder a las exigencias teóricas del proyecto.
 
-\section{Instrumentos de Investigación}
+\section{Metodología}
 
-    \textbf{\textit{Descripción}}
-    
-    Detalla los elementos y tipos de instrumentos que se emplearán, y se justifica su uso \cite{latexcompanion}.
-    En algunas ocasiones, se deberá diseñar los instrumentos, lo cual implica un sub-proyecto de investigación dentro de la investigación.
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    Validez y confiabilidad demostrada.
+    Se debe describir tanto la metodología como los pasos a
+    seguir para el desarrollo del proyecto.
+    • Se presentan los métodos o técnicas existentes a emplear
+    para alcanzar los objetivos propuestos
+    • Se describe cómo se hará el diseño y el desarrollo de la
+    propuesta.
+    • Se plantea cuál es el ambiente para realizar los
+    experimentos de la propuesta.
+    • Se indica cómo se evaluará el alcance de los objetivos.
 
-\section{Diseño Técnico y metodológico para la obtención y análisis de la información}
 
-    \textbf{\textit{Descripción}}
-    
-    Se especifica el diseño de la investigación y se da una descripción técnica y metodológica de cómo se realizó el análisis de los datos.
-    Se mencionan las pruebas estadísticas empleadas y/o el programa de cómputo utilizado en el análisis de los datos.
-    
-    \textbf{\textit{Criterios de calidad}}
-    
-    Debe explicar de forma ordenada el proceso que se realizó para lograr el objetivo de la investigación.
-    Deben indicarse las técnicas de análisis, el grado y nivel de confiabilidad de las pruebas que se emplearon.
+\section{Cronograma}
+Es la planificación y logística que se destinará a cada una
+de las etapas de la investigación.
+• Es el plan de actividades que muestra un orden lógico y
+secuencial del proceso del proyecto.
+• Deben señalarse las actividades que serán necesarias
+desarrollar para cada etapa de la investigación.
+• Comprende desde la presentación del protocolo hasta la
+entrega del borrador de tesis.
+• Se deben establecer las actividades en función del tiempo
+disponible, recursos, materias que se están cursando y
+políticas institucionales.
+
+Se debe realizar un calendario tentativo de las actividades
+indicadas en la metodología, indicando claramente las
+tareas a desarrollar, por etapas, las cuales deberán tener un
+estado actualizado (en curso, concluida).
+• Se debe tener en cuenta el tiempo que se dedicará a cada
+actividad. Aunque parece un detalle menor, este indicará la
+factibilidad de realizar el proyecto en el tiempo determinado.
+• Se deben indicar las actividades secuenciales o
+dependientes y simultáneas.
+
+Debe responder, entre otras, a las siguientes preguntas:
+- ¿Cuándo se hará la recopilación de datos?
+- ¿Cuándo se hará el diseño y el desarrollo (hardware o
+software)
+- ¿Cuándo se escribirá la tesis?
+- ¿Cuándo se defenderá la tesis?
+
+\section{Entregables}
+Indicar los productos derivados del proyecto.
+• Se consideran entregables los siguientes:
+1. Documento Final (Tesis, Proyecto Intervención)
+2. Presentación de avances en seminarios y coloquios.
+3. Publicación de avances y resultados en congresos.
+4. Artículos de investigación en revistas especializadas.
+5. Artículos en revistas de divulgación.
+6. Libros y capítulos de libros de resultados obtenidos.
+7. Desarrollos y transferencias tecnológicas derivados.
+8. Manuales de procedimientos.
+9. Patentes, modelos de utilidad.
+10. Código
