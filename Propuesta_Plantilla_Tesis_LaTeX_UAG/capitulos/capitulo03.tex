@@ -7,7 +7,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{Propuesta_Plantilla_Tesis_LaTeX_UAG/imagenes/ARCHITECTURE.png}
-        \caption{Arquitectura basada en micro servicios.}
+        \caption{Arquitectura del sistema de investigadores.}
         \label{fig:architecture}
     \end{figure}
     
@@ -46,31 +46,53 @@
         \caption{Diagrama UML para la secuencia de obtener las tesis de un alumno.}
         \label{fig:getAllTesisFromStudents}
     \end{figure}
-    
-    Se debe plantear un diagrama general de la propuesta del
-    proyecto a realizar.
-    • El objetivo es explicar en uno o varios diagramas la
-    propuesta del proyecto a desarrollar, indicando el flujo de
-    información, los módulos principales, la teoría relacionada,
-    y los resultados esperados.
-    • Debe incluir una relación lógica de los elementos que se
-    consideran necesarios para dar una visión completa de la
-    propuesta.
-    • Debe estar orientado a los objetivos propuestos y debe
-    responder a las exigencias teóricas del proyecto.
 
 \section{Metodología}
 
-    Se debe describir tanto la metodología como los pasos a
-    seguir para el desarrollo del proyecto.
-    • Se presentan los métodos o técnicas existentes a emplear
-    para alcanzar los objetivos propuestos
-    • Se describe cómo se hará el diseño y el desarrollo de la
-    propuesta.
-    • Se plantea cuál es el ambiente para realizar los
-    experimentos de la propuesta.
-    • Se indica cómo se evaluará el alcance de los objetivos.
+    La forma de trabajar se basa en metodologías ágiles, las cuales se hacen iteraciones pequeñas para presentar entregables de manera constante y obtener retroalimentación de la Doctora Lina María Aguila Lobo, la cual representa en este grupo de trabajo al cliente y sus necesidades. Las metodologías ágiles tienen un manifiesto\cite{AgileManifesto}:
+    
+    \begin{itemize}
+        \item Individuos e interacciones sobre procesos y herramientas. \cite{AgileManifesto}
+        \item Software funcionando sobre documentación extensiva. \cite{AgileManifesto}
+        \item Colaboración con el cliente sobre negociación contractual. \cite{AgileManifesto}
+        \item Respuesta ante el cambio sobre seguir un plan. \cite{AgileManifesto}
+    \end{itemize}
+    
+    Además de que las metodologías ágiles se basan en 12 principios\cite{AgilePrinciples}:
+    
+    \begin{enumerate}
+        \item Nuestra mayor prioridad es satisfacer al cliente mediante la entrega temprana y continua de software con valor. \cite{AgilePrinciples}
 
+        \item Aceptamos que los requisitos cambien, incluso en etapas tardías del desarrollo. Los procesos Ágiles aprovechan el cambio para proporcionar ventaja competitiva al cliente. \cite{AgilePrinciples}
+
+        \item Entregamos software funcional frecuentemente, entre dos semanas y dos meses, con preferencia al periodo de tiempo más corto posible. \cite{AgilePrinciples}
+
+        \item Los responsables de negocio y los desarrolladores trabajamos juntos de forma cotidiana durante todo el proyecto. \cite{AgilePrinciples}
+
+        \item Los proyectos se desarrollan en torno a individuos motivados. Hay que darles el entorno y el apoyo que necesitan, y confiarles la ejecución del trabajo. \cite{AgilePrinciples}
+
+        \item El método más eficiente y efectivo de comunicar información al equipo de desarrollo y entre sus miembros es la conversación cara a cara. \cite{AgilePrinciples}
+
+        \item El software funcionando es la medida principal de progreso. \cite{AgilePrinciples}
+
+        \item Los procesos Ágiles promueven el desarrollo sostenible. Los promotores, desarrolladores y usuarios debemos ser capaces de mantener un ritmo constante de forma indefinida. \cite{AgilePrinciples}
+
+        \item La atención continua a la excelencia técnica y al buen diseño mejora la Agilidad. \cite{AgilePrinciples}
+
+        \item La simplicidad, o el arte de maximizar la cantidad de trabajo no realizado, es esencial. \cite{AgilePrinciples}
+
+        \item Las mejores arquitecturas, requisitos y diseños emergen de equipos auto organizados. \cite{AgilePrinciples}
+        
+        \item A intervalos regulares el equipo reflexiona sobre cómo ser más efectivo para a continuación ajustar y perfeccionar su comportamiento en consecuencia. \cite{AgilePrinciples}
+    \end{enumerate}
+    
+    Tomando en cuenta la forma de trabajar de la metodología ágil el desarrollo del sistema de investigadores se realiza de la siguiente manera: cada iteración durará una semana, por lo que se deben de presentar entregables al lunes de cada semana siguiente, en el lunes que se presentan entregables se hará una junta de 1 hora máximo para mostrar avances que se hayan dado en la semana anterior, coordinar los esfuerzos para elegir y comprometerse a terminar por cada integrante del equipo basándose en las tareas pendientes, además de que en la junta se tratan temas para apoyar a integrantes del equipo que puedan estar atorados en alguna tarea debido a que esta sea compleja o se requiera de obtener información adicional.
+    
+    La manera de llevar un control y seguimiento del progreso del sistema de investigadores es a través de un sistema llamado Jira, el cual permite crear tareas nuevas, asignarlas a cualquier integrante del equipo, cerrarlas para que se pueda determinar el avance real de el sistema de investigadores y, dar visibilidad al progreso total del equipo.
+    
+    Cada actividad o tarea realizada es evaluada o supervisada por otro integrante del equipo, lo cual ayuda a validar y verificar que lo que se está haciendo es lo pedido por la Doctora Lina María Aguilar Lobo y, que se hace de la manera correcta.
+    
+    Por el momento la única forma de mostrar el funcionamiento de los componentes o módulos creados es usando un ambiente local que el desarrollador tendrá instalado en su máquina.
 
 \section{Cronograma}
 Es la planificación y logística que se destinará a cada una
@@ -103,15 +125,12 @@ software)
 - ¿Cuándo se defenderá la tesis?
 
 \section{Entregables}
-Indicar los productos derivados del proyecto.
-• Se consideran entregables los siguientes:
-1. Documento Final (Tesis, Proyecto Intervención)
-2. Presentación de avances en seminarios y coloquios.
-3. Publicación de avances y resultados en congresos.
-4. Artículos de investigación en revistas especializadas.
-5. Artículos en revistas de divulgación.
-6. Libros y capítulos de libros de resultados obtenidos.
-7. Desarrollos y transferencias tecnológicas derivados.
-8. Manuales de procedimientos.
-9. Patentes, modelos de utilidad.
-10. Código
+
+    Se consideran los siguientes productos derivados del proyecto:
+    
+    \begin{enumerate}
+        \item Documento Final
+        \item Presentación de avances en seminarios y coloquios.
+        \item Manuales de procedimientos.
+        \item Código
+    \end{enumerate}
