@@ -41,6 +41,16 @@
     \usepackage{minted}
     \usepackage{tikz}
     \usepackage{verbatim}
+    \usepackage{paralist}
+      \let\itemize\compactitem
+      \let\enditemize\endcompactitem
+      \let\enumerate\compactenum
+      \let\endenumerate\endcompactenum
+      \let\description\compactdesc
+      \let\enddescription\endcompactdesc
+      \pltopsep=\medskipamount
+      \plitemsep=1pt
+      \plparsep=1pt
     \graphicspath{{imagenes/}} %Ubicación de imágenes
     \hypersetup{
         %Configuración comandos de referencia cruzada en LATEX:
@@ -95,11 +105,13 @@
         %\chapter{Conclusiones}
         %\input{capitulos/capitulo04}    % Capitulo 04
         
-        \chapter{Referencias}
-        \input{contraportada/anexos} 
-        
+        %\chapter{}
+        %\input{contraportada/anexos}
         \bibliographystyle{apalike} % Formato de la IEEE
         \bibliography{bibliografia/articulos.bib,bibliografia/libros.bib,bibliografia/miscellaneous.bib}
+
+        
+        
     
     \end{document}
 %-----------------------------------------------------------%
