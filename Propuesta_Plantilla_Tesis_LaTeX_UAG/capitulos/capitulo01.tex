@@ -11,20 +11,20 @@
 \section{Objetivo(s) de la investigación} \label{objetivoinvestigacion}
     
     \subsection{\textbf{\textit{Objetivo general}}} %Cómo hacer sub-secciones
-    Elaborar el sistema de investigadores que permita a los estudiantes crear tesis, y a los profesores proyectos usando microservicios para que sea más sencillo el acoplar nuevas funcionalidades a este sistema.
+    Elaborar el sistema de investigadores que permita a los estudiantes crear tesis, y a los profesores proyectos usando micro servicios para que sea más sencillo el acoplar nuevas funcionalidades a este sistema.
     
     \subsection{\textbf{\textit{Objetivos específicos}}} %Cómo hacer sub-secciones
     \begin{enumerate}
-        \item Elaborar microservicios para el crear, actualizar, eliminar y obtener información de una base de datos.
+        \item Elaborar arquitectura basada en micro servicios
+        \item Utilizar APIs para el crear, actualizar, eliminar y obtener información de una base de datos.
         \item Separar la funcionalidad del sistema en backend y frontend.
         \item Elaborar la base de datos relacional normalizada.
-        \item Modernizar la interfaz gráfica con la cual interactúan los usuarios.
-        \item Conectar los microservicios(backend) con la interfaz gráfica(frontend).
+        \item Conectar los micro servicios(backend) con la interfaz gráfica(frontend).
     \end{enumerate}
 
 \section{Delimitación de la investigación} \label{delimitacioninvestigacion}
 
-    El estudiante participará en la parte del backend para crear microservicios faltantes identificados como:
+    El estudiante participará en la parte del backend para crear micro servicios faltantes identificados como:
     
     \begin{enumerate}
         \item Servicio para obtener todas las tesis relacionadas a un alumno en específico.
@@ -38,10 +38,12 @@
 
 \section{Justificación} \label{justificacion}
 
-    La necesidad de la renovación de este sistema radica en que se agregan nuevas funcionalidades, sin embargo, después de indagar en cómo agregar dichas funcionalidades se obtuvo como respuesta que cada vez que quisieran hacer cambios, se tendría que modificar varias partes del sistema; ya que la mayoría de este es estático, por lo tanto, con la renovación se cambiará la arquitectura a una de microservicios, los cuales permiten hacer un sistema más flexible y dinámico a cambios.
+    La necesidad de la renovación de este sistema radica en que se agregan nuevas funcionalidades, sin embargo, después de indagar en cómo agregar dichas funcionalidades se obtuvo como respuesta que cada vez que quisieran hacer cambios, se tendría que modificar varias partes del sistema; ya que la mayoría de este es estático, por lo tanto, con la renovación se cambiará la arquitectura a una de micro servicios, los cuales permiten hacer un sistema más flexible y dinámico a cambios.
     
-    El trabajar con microservicios permite que se hagan módulos independientes los cuales realizan una tarea en específico, y esto da pie a integrar los módulos de manera que incluso si los requisitos van cambiando, estos no se vean afectados por los cambios requeridos.
+    El trabajar con micro servicios permite que se hagan módulos independientes los cuales realizan una tarea en específico, y esto da pie a integrar los módulos de manera que incluso si los requisitos van cambiando, estos no se vean afectados por los cambios requeridos.
 
 \section{Hipótesis} \label{hipotesis}
 
     El nuevo sistema permite tener una flexibilidad mayor al agregar funcionalidades, o incluso modificarlas, además de que se tiene una interfaz gráfica de usuario más moderna y amigable.
+    
+    La necesidad de rehacer el sistema de investigadores yace en la habilidad de agregar nuevas funcionalidades para mejorar los procesos de los investigadores dentro de la Universidad Autónoma de Guadalajara y, dado el conocimiento y habilidades de programación para backend se implementa la arquitectura de micro servicios para proveer la información dinámica requerida y almacenada en la base de datos a la parte del frontend la cual se encargarán otros alumnos de realizar.
